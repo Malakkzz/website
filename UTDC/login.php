@@ -26,6 +26,7 @@
 	<body  class="text-center bg">
 		<main class="form-signin">
 		
+		
 			<form action="index.php" method="post"  >
 				<img class="mb-4" src="images/logo1.png" alt="" width="270" height="200">
 				
@@ -39,6 +40,7 @@
 				</div>
 					<button class="w-100 btn btn-lg btn-success mt-1 mb-2" style="font-family:georgia" name="submit" type="submit">Sign in</button>
 					<p class="mt-3 mb-3 text-muted" style="font-family:georgia;">Don't have an account? <a href="signup.php" style="text-decoration:none; color:green;">Sign up</a></p>
+					<a href="index.php" style="text-decoration:none;color:green">Back to home</a>
 			</form>
 		</main>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -10,6 +10,13 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         
         <style>
+            #btn-back-to-top {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                display: none;
+                border-radius: 45px;
+            }
             .e1{
                 /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#1c3d0b+0,22d658+65,6ecc7c+100 */
                 background: #3a7f3b; /* Old browsers */
@@ -122,6 +129,17 @@
                     font-size: 3.5rem;
                     }
                 }
+                .nav-link:hover{
+                    color:#198754!important;
+                    text-decoration:underline;
+                }
+                .dropdown-menu{
+                    background-color: #f8f9fa;
+                }
+                .dropdown-item:hover{
+                    background-color: #198754;
+                    color: #f4f4f4;
+                }
 
 
         </style>
@@ -129,43 +147,56 @@
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#home">UTDC</a>
+                <a class="navbar-brand mx-4" href="#home">UTDC</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Categories
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Action</a></li>
-                        <li><a class="dropdown-item" href="#">Another action</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="#">Something else here</a></li>
-                    </ul>
-                </ul>
-                <?php
-                    if($sign == true){?>
-                    <a href="login.php"><button class="btn btn-outline-success" type="submit">Login</button></a>&nbsp;
-                    <a href="signup.php"><button class="btn btn-outline-success" type="submit">Sign up</button></a>
-                    <?php }
-                    else{?>
-                        <form class="d-flex" action="index.php" method="post">
-                            <button class="btn btn-outline-success" type="submit" name="sign-out">Sign out</button>
-                        </form>
-                    <?php }
-                ?>
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                            <a class="nav-link navbar-elements" aria-current="page" href="#home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link navbar-elements" href="#about">About</a>
+                            </li>
+                            <li class="nav-item">
+                            <a class="nav-link navbar-elements" href="#contact">Contact</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link navbar-elements dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Categories
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="#">Action</a></li>
+                                <li><a class="dropdown-item" href="#">Another action</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                            </li>
+                            <?php if($sign == false){ ?>
+                            <li class="nav-item dropdown">
+                            <a class="nav-link navbar-elements dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Account
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="viewProfile.php">View profile</a></li>
+                            </ul>
+                            </li>
+                            <?php } ?>
+                        </ul>
+                        <div class="d-flex">
+                    <?php
+                        if($sign == true){?>
+                        <a href="login.php"><button class="btn btn-outline-success" type="submit">Login</button></a>&nbsp;
+                        <a href="signup.php"><button class="btn btn-outline-success" type="submit">Sign up</button></a>
+                        </div>
+                        <?php }
+                        else{?>
+                            <form class="d-flex" action="index.php" method="post">
+                                <button class="btn btn-outline-success" type="submit" name="sign-out">Sign out</button>
+                            </form>
+                        <?php }
+                    ?>
                 </div>
             </div>
         </nav>
